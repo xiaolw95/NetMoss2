@@ -1,6 +1,8 @@
 # NetMoss2
 NetMoss2 is the new version of NetMoss, which is a tool developed for integrating large-scale data and identifying disease associated biomarkers based on network algorithm.         
 
+In this new version, both single file and 
+
 For more information, please see paper "Large-scale microbiome data integration enables robust biomarker identification" published in Nature Computational Science.    
 
 
@@ -22,37 +24,44 @@ library(NetMoss2)
 ## Basic Usage     
 The NetMoss2 function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories or files as follows:      
 ```
-NetMoss(case_dir = case_dir,    
+NetMoss2(case_dir = case_dir,    
         control_dir = control_dir,    
         net_case_dir = net_case_dir,   
-        net_control_dir = net_control_dir,   
-        minModuleSize = 20)   
+        net_control_dir = net_control_dir)   
 ```
 `case_dir:`  the directory or a single file of case data.     
 `control_dir:`  the directory or a single file of control data.      
 `net_case_dir:`  the directory or a single file of case network.      
-`net_control_dir:`  the directory a single data of control network.      
+`net_control_dir:`  the directory or a single data of control network.      
 
+# example for multiple files
 We have provided a small dataset to test the function.     
-1. Download from the data directory (https://github.com/xiaolw95/NetMoss/tree/main/data) directly. 
+1. Download from the testthat directory () directly. 
 Or get the dataset using `git clone` commond in `Linux`:      
 ```
-git clone https://github.com/xiaolw95/NetMoss.git     
-cd NetMoss/data
+git clone https://github.com/xiaolw95/NetMoss2.git     
+cd NetMoss2/tests/testthat
 ```
 
-2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss` function:       
+2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss2` function:       
 ```
-##setwd('path-to-data-directory')
+##setwd('path-to-testthat-directory')
 case_dir = paste0(getwd(),"/case_dir")
 control_dir = paste0(getwd(),"/control_dir")
 net_case_dir = paste0(getwd(),"/net_case_dir")
 net_control_dir = paste0(getwd(),"/net_control_dir")
-result = NetMoss(case_dir = case_dir,    
+result = NetMoss2(case_dir = case_dir,    
         control_dir = control_dir,    
         net_case_dir = net_case_dir,   
         net_control_dir = net_control_dir) 
 ```   
+
+# example for single file
+If users only have single file for case and control groups, NetMoss2 can also be used to identify significant biomarkes.   
+```
+data(testData)
+
+```
 
 ## Input     
 Abundance or network matrix should be included in the directory of the input.    
