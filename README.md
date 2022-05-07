@@ -141,7 +141,7 @@ A combined ROC will be ploted if the parameter `plot.roc` is set to be true.
 
 ## Example
 ### example for multiple files
-We have provided a small dataset to test the function.     
+We have provided a small dataset to test the R package. In our testthat directory, both abundance files and network files, as well as the metadata, are included.       
 1. Download from the testthat directory () directly. 
 Or get the dataset using `git clone` commond in `Linux`:      
 ```
@@ -149,11 +149,11 @@ git clone https://github.com/xiaolw95/NetMoss2.git
 cd NetMoss2/tests/testthat
 ```
 
-2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss2` function:       
+2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss` function:       
 ```
-#setwd('path-to-testthat-directory')
+#setwd('path-to-testthat-directory')   ##set the directory to testthat
 
-#read datasets
+#read directory
 case_dir = paste0(getwd(),"/case_dir")
 control_dir = paste0(getwd(),"/control_dir")
 net_case_dir = paste0(getwd(),"/net_case_dir")
@@ -169,12 +169,12 @@ nodes_result = NetMoss(case_dir = case_dir,
         control_dir = control_dir,    
         net_case_dir = net_case_dir,   
         net_control_dir = net_control_dir) 
-        
+result = nodes_result[[1]]     ####NetMoss score result
+
 #plot networks
 netPlot(nodes_result,tax = "g__Enterobacter")    ####image saved
 
 #plot roc 
-result = nodes_result[[1]]
 marker = data.frame(result[which(result$p.adj < 0.05),])
 marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
 rownames(marker) = marker$taxon_names
@@ -190,6 +190,8 @@ myROC = netROC(case_dir = case_dir,
 ### example for single file
 If users only have single file for case and control groups, NetMoss2 can also be used to identify significant biomarkes.   
 ```
+#setwd("your-directory")
+
 #load dataset
 data(testData)
 
