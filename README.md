@@ -171,13 +171,9 @@ nodes_result = NetMoss(case_dir = case_dir,
         net_control_dir = net_control_dir) 
         
 #plot networks
-netPlot(nodes_result,tax = "g__Bacteroides")    ####image saved
+netPlot(nodes_result,tax = "g__Enterobacter")    ####image saved
 
 #plot roc 
-nodes_result = NetMoss(case_dir = case_dir,
-                       control_dir = control_dir,
-                       net_case_dir = net_case_dir,
-                       net_control_dir = net_control_dir)
 result = nodes_result[[1]]
 marker = data.frame(result[which(result$p.adj < 0.05),])
 marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
@@ -215,13 +211,6 @@ result = nodes_result[[1]]   ####NetMoss score result
 netPlot(nodes_result,tax = "g__Bacteroides")    ####image saved
 
 #plot roc 
-case_dir = mydata[[1]]
-control_dir = mydata[[2]]
-nodes_result = NetMoss(case_dir = case_dir,
-                       control_dir = control_dir,
-                       net_case_dir = mydata[[3]],
-                       net_control_dir = mydata[[4]])
-result = nodes_result[[1]]
 marker = data.frame(result[which(result$p.adj < 0.05),])
 marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
 rownames(marker) = marker$taxon_names
