@@ -60,7 +60,7 @@ Abundance or network matrix should be included in the input.
 
 ##### Network Construction
 For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables). Network matrix will be output to the same parent directories automatically. For single file usage, users are asked to provided the abundance matrix only. 
-NOTE: The `netBuild` function will creat "net_case_dir" and "net_control_dir" directories and output the network results into them. If the same directories exist, this step will be skipped.     
+NOTE: The `netBuild` function will creat "net_case_dir" and "net_control_dir" directories and output the network results into them. If the same directories exist, files will be overwritten.     
 ```
 netBuild(case_dir = case_dir,
          control_dir = control_dir,
