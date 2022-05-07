@@ -23,7 +23,7 @@ library(NetMoss2)
 ```
 
 ## Basic Usage     
-The NetMoss2 function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories or files as follows:      
+The NetMoss function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories or files as follows:      
 ```
 NetMoss(case_dir = case_dir,    
         control_dir = control_dir,    
@@ -59,11 +59,12 @@ Abundance or network matrix should be included in the input.
 |  ... ... |        |        |        |     
 
 ##### Network construction
-For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables). Network matrix will be output to the same directories automatically. For single file usage, users are asked to provided the abundance matrix only.          
+For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables). Network matrix will be output to the same parent directories automatically. For single file usage, users are asked to provided the abundance matrix only. 
+NOTE: The `netBuild` function will creat "net_case_dir" and "net_control_dir" directories and output the network results into them. If the same directories exist, this step will be skipped.     
 ```
 netBuild(case_dir = case_dir,
-      control_dir = control_dir,
-      method = "sparcc")
+         control_dir = control_dir,
+         method = "sparcc")
 ```
 `case_dir:`  the directory or a single file of case data.      
 `control_dir:`  the directory or a single file of control data.          
@@ -84,6 +85,18 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 `p.val:` the P value for the NetMoss score.   
 `p.adj:` the adjust P value for the NetMoss score.    
 
+#### visualization
+In this part, we provide a function to illustrate the results. The `netPlot` function will output a paired networks to demostrated difference of structure between case and control networks.         
+```
+netPlot(result = nodes_result,
+        tax = "g__Bacteroides")
+```
+`result:` the result from NetMoss function. This is a list contained NetMoss score and integrated networks.    
+`tax:` the target taxon which the users are interested. The taxon name must be included in the input file.    
+
+The network image will be saved in the directory.    
+
+<img src="https://github.com/xiaolw95/NetMoss/blob/main/NetMoss_ROC.png" width = "500px">     
 
 ## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
@@ -92,11 +105,11 @@ netROC(case_dir = case_dir,
       control_dir = control_dir,
       marker = marker,
       metadata = metadata,
-      plot.roc = T,
+      plot.roc = TRUE,
       train.num = 20)
 ```
-`case_dir:` the directory of case datasets.     
-`control_dir:` the directory of control datasets.    
+`case_dir:` the directory or a single file of case data.     
+`control_dir:` the directory or a single file of control data.    
 `marker:` a table of combined markers identified by NetMoss.     
 `metadata:`  a table of clinical informations for all studies.     
 `plot.roc:`  a logical parameter. If TRUE then the combined ROC of the result of classification will be plotted.     
@@ -112,12 +125,6 @@ Also, a metadata file contains disease or health information for each sample nee
 |  ... ... |        |        |  
 
 After preparing the two files, classification can be realized using the function `netROC`:     
-```
-marker = data.frame(result[which(result$NetMoss_Score > 0.3),])       
-rownames(marker) = marker$taxon_names        
-metadata = read.table("metadata.txt",header = T,sep = '\t',row.names = 1)     
-myROC = netROC(case_dir,control_dir,marker,metadata)     
-```
 
 The result of the classfication is a table includes true positive rate and false positive rate:     
 | threhold |  TPR  |  FPR  |      
@@ -144,24 +151,85 @@ cd NetMoss2/tests/testthat
 
 2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss2` function:       
 ```
-##setwd('path-to-testthat-directory')
+#setwd('path-to-testthat-directory')
+
+#read datasets
 case_dir = paste0(getwd(),"/case_dir")
 control_dir = paste0(getwd(),"/control_dir")
 net_case_dir = paste0(getwd(),"/net_case_dir")
 net_control_dir = paste0(getwd(),"/net_control_dir")
-result = NetMoss(case_dir = case_dir,    
+
+#construct networks  ###if files exist, skip
+#netBuild(case_dir = case_dir,
+#         control_dir = control_dir,
+#         method = "sparcc")
+
+#calculate NetMoss score
+nodes_result = NetMoss(case_dir = case_dir,    
         control_dir = control_dir,    
         net_case_dir = net_case_dir,   
         net_control_dir = net_control_dir) 
+        
+#plot networks
+netPlot(nodes_result,tax = "g__Bacteroides")    ####image saved
+
+#plot roc 
+nodes_result = NetMoss(case_dir = case_dir,
+                       control_dir = control_dir,
+                       net_case_dir = net_case_dir,
+                       net_control_dir = net_control_dir)
+result = nodes_result[[1]]
+marker = data.frame(result[which(result$p.adj < 0.05),])
+marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
+rownames(marker) = marker$taxon_names
+metadata = read.table("metadata.txt",header = T,sep = '\t',row.names = 1)
+myROC = netROC(case_dir = case_dir,
+               control_dir = control_dir,
+               marker = marker,
+               metadata = metadata,
+               plot.roc = TRUE, 
+               train.num = 20)    ####image saved
 ```   
 
 ### example for single file
 If users only have single file for case and control groups, NetMoss2 can also be used to identify significant biomarkes.   
 ```
+#load dataset
 data(testData)
+
+#contruct networks
+case_dir = mydata[[1]]
+control_dir = mydata[[2]]
+netBuild(case_dir = case_dir,
+         control_dir = control_dir,
+         method = "sparcc")     
+
+#calculate NetMoss score
 nodes_result = NetMoss(case_dir = mydata[[1]],
                        control_dir = mydata[[2]],
                        net_case_dir = mydata[[3]],
                        net_control_dir = mydata[[4]])
-my_result = nodes_result[[1]]
+result = nodes_result[[1]]   ####NetMoss score result
+
+#plot networks
+netPlot(nodes_result,tax = "g__Bacteroides")    ####image saved
+
+#plot roc 
+case_dir = mydata[[1]]
+control_dir = mydata[[2]]
+nodes_result = NetMoss(case_dir = case_dir,
+                       control_dir = control_dir,
+                       net_case_dir = mydata[[3]],
+                       net_control_dir = mydata[[4]])
+result = nodes_result[[1]]
+marker = data.frame(result[which(result$p.adj < 0.05),])
+marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
+rownames(marker) = marker$taxon_names
+metadata = mydata[[5]]
+myROC = netROC(case_dir = case_dir,
+               control_dir = control_dir,
+               marker = marker,
+               metadata = metadata,
+               plot.roc = TRUE, 
+               train.num = 20)    ####image saved
 ```
