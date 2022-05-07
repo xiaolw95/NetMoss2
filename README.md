@@ -155,7 +155,7 @@ cd NetMoss2/tests/testthat
 
 2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss` function:       
 ```
-#setwd('path-to-testthat-directory')   ##set the directory to testthat
+#setwd('path-to-testthat-directory')   ####set the directory to testthat
 
 #read directory
 case_dir = paste0(getwd(),"/case_dir")
@@ -163,7 +163,7 @@ control_dir = paste0(getwd(),"/control_dir")
 net_case_dir = paste0(getwd(),"/net_case_dir")
 net_control_dir = paste0(getwd(),"/net_control_dir")
 
-#construct networks  ###if files exist, skip
+#construct networks  ####if files exist, skip
 #netBuild(case_dir = case_dir,
 #         control_dir = control_dir,
 #         method = "sparcc")
@@ -199,12 +199,10 @@ If users only have single file for case and control groups, NetMoss2 can also be
 #load dataset
 data(testData)
 
-#contruct networks
-case_dir = mydata[[1]]
-control_dir = mydata[[2]]
-netBuild(case_dir = case_dir,
-         control_dir = control_dir,
-         method = "sparcc")     
+#contruct networks    ####if files exist, skip
+#netBuild(case_dir = mydata[[1]],
+#         control_dir = mydata[[2]],
+#         method = "sparcc")     
 
 #calculate NetMoss score
 nodes_result = NetMoss(case_dir = mydata[[1]],
@@ -221,8 +219,8 @@ marker = data.frame(result[which(result$p.adj < 0.05),])
 marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
 rownames(marker) = marker$taxon_names
 metadata = mydata[[5]]
-myROC = netROC(case_dir = case_dir,
-               control_dir = control_dir,
+myROC = netROC(case_dir =  mydata[[1]],
+               control_dir =  mydata[[2]],
                marker = marker,
                metadata = metadata,
                plot.roc = TRUE, 
