@@ -11,7 +11,8 @@ For more information, please see paper "Large-scale microbiome data integration 
 - [Basic Usage](#basic-usage)     
 - [Input](#input)     
 - [Output](#output)     
-- [Classification](#classification)           
+- [Classification](#classification)    
+- [Example](#example)       
 
 ## Installation    
 Installation with `devtools`     
@@ -24,7 +25,7 @@ library(NetMoss2)
 ## Basic Usage     
 The NetMoss2 function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories or files as follows:      
 ```
-NetMoss2(case_dir = case_dir,    
+NetMoss(case_dir = case_dir,    
         control_dir = control_dir,    
         net_case_dir = net_case_dir,   
         net_control_dir = net_control_dir)   
@@ -34,34 +35,6 @@ NetMoss2(case_dir = case_dir,
 `net_case_dir:`  the directory or a single file of case network.      
 `net_control_dir:`  the directory or a single data of control network.      
 
-### example for multiple files
-We have provided a small dataset to test the function.     
-1. Download from the testthat directory () directly. 
-Or get the dataset using `git clone` commond in `Linux`:      
-```
-git clone https://github.com/xiaolw95/NetMoss2.git     
-cd NetMoss2/tests/testthat
-```
-
-2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss2` function:       
-```
-##setwd('path-to-testthat-directory')
-case_dir = paste0(getwd(),"/case_dir")
-control_dir = paste0(getwd(),"/control_dir")
-net_case_dir = paste0(getwd(),"/net_case_dir")
-net_control_dir = paste0(getwd(),"/net_control_dir")
-result = NetMoss2(case_dir = case_dir,    
-        control_dir = control_dir,    
-        net_case_dir = net_case_dir,   
-        net_control_dir = net_control_dir) 
-```   
-
-### example for single file
-If users only have single file for case and control groups, NetMoss2 can also be used to identify significant biomarkes.   
-```
-data(testData)
-
-```
 
 ## Input     
 Abundance or network matrix should be included in the input.    
@@ -85,6 +58,7 @@ Abundance or network matrix should be included in the input.
 |  taxon3  |   0.5  |  0.67  |    1   |      
 |  ... ... |        |        |        |     
 
+##### Network construction
 For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables). Network matrix will be output to the same directories automatically. For single file usage, users are asked to provided the abundance matrix only.          
 ```
 netBuild(case_dir = case_dir,
@@ -95,19 +69,21 @@ netBuild(case_dir = case_dir,
 `control_dir:`  the directory or a single file of control data.          
 `method:` the method to build networks. "sparcc" and "pearson" strategy are provided to choose.
 
+
 ## Output
 The output of the NetMoss is a table of NetMoss score for each taxon:     
-| taxon_names | control_mod | case_mod | NetMoss_score |      
-|  ------  | -----  | -----  | -----  |      
-|    taxon1   |    1     |      1     |      0.98     |      
-|    taxon2   |    2     |      1     |      0.7      |      
-|    taxon3   |    3     |      2     |      0.32     |      
-|    ... ...  |        |        |        |       
+| taxon_names | NetMoss_score |      p.val    |      p.adj    |    
+|  ---------  | ------------  |  ------------ |  -----------  |       
+|    taxon1   |      0.98     |  5.703785e-09 |  2.335836e-08 |       
+|    taxon2   |      0.7      |  1.467413e-04 |  2.629116e-04 |    
+|    taxon3   |      0.32     |  2.018237e-04 |  3.542211e-04 |     
+|    ... ...  |               |               |               |    
 
-`taxon_names:` the name of the bacteria.      
-`control_mod:`  the control module of the bacteria belongs to.      
-`case_mod:`  the case module of the bacteria belongs to.     
+`taxon_names:` the name of the bacteria.         
 `NetMoss_score:`  the NetMoss of the bacteria gets.      
+`p.val:` the P value for the NetMoss score.   
+`p.adj:` the adjust P value for the NetMoss score.    
+
 
 ## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
@@ -154,3 +130,38 @@ The result of the classfication is a table includes true positive rate and false
 A combined ROC will be ploted if the parameter `plot.roc` is set to be true.     
 
 <img src="https://github.com/xiaolw95/NetMoss/blob/main/NetMoss_ROC.png" width = "500px">   
+
+
+## Example
+### example for multiple files
+We have provided a small dataset to test the function.     
+1. Download from the testthat directory () directly. 
+Or get the dataset using `git clone` commond in `Linux`:      
+```
+git clone https://github.com/xiaolw95/NetMoss2.git     
+cd NetMoss2/tests/testthat
+```
+
+2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss2` function:       
+```
+##setwd('path-to-testthat-directory')
+case_dir = paste0(getwd(),"/case_dir")
+control_dir = paste0(getwd(),"/control_dir")
+net_case_dir = paste0(getwd(),"/net_case_dir")
+net_control_dir = paste0(getwd(),"/net_control_dir")
+result = NetMoss(case_dir = case_dir,    
+        control_dir = control_dir,    
+        net_case_dir = net_case_dir,   
+        net_control_dir = net_control_dir) 
+```   
+
+### example for single file
+If users only have single file for case and control groups, NetMoss2 can also be used to identify significant biomarkes.   
+```
+data(testData)
+nodes_result = NetMoss(case_dir = mydata[[1]],
+                       control_dir = mydata[[2]],
+                       net_case_dir = mydata[[3]],
+                       net_control_dir = mydata[[4]])
+my_result = nodes_result[[1]]
+```
