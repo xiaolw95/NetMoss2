@@ -58,7 +58,7 @@ Abundance or network matrix should be included in the input.
 |  taxon3  |   0.5  |  0.67  |    1   |      
 |  ... ... |        |        |        |     
 
-##### Network construction
+##### Network Construction
 For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables). Network matrix will be output to the same parent directories automatically. For single file usage, users are asked to provided the abundance matrix only. 
 NOTE: The `netBuild` function will creat "net_case_dir" and "net_control_dir" directories and output the network results into them. If the same directories exist, this step will be skipped.     
 ```
@@ -85,7 +85,7 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 `p.val:` the P value for the NetMoss score.   
 `p.adj:` the adjust P value for the NetMoss score.    
 
-#### visualization
+#### Visualization
 In this part, we provide a function to illustrate the results. The `netPlot` function will output a paired networks to demostrated difference of structure between case and control networks.         
 ```
 netPlot(result = nodes_result,
@@ -124,7 +124,9 @@ Also, a metadata file contains disease or health information for each sample nee
 |  SRRXXXXX  | healthy | study1 |        
 |  ... ... |        |        |  
 
-After preparing the two files, classification can be realized using the function `netROC`:     
+
+#### Result
+After preparing the two files, classification can be realized using the function `netROC`     
 
 The result of the classfication is a table includes true positive rate and false positive rate:     
 | threhold |  TPR  |  FPR  |      
