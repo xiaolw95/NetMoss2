@@ -34,7 +34,7 @@ NetMoss2(case_dir = case_dir,
 `net_case_dir:`  the directory or a single file of case network.      
 `net_control_dir:`  the directory or a single data of control network.      
 
-# example for multiple files
+### example for multiple files
 We have provided a small dataset to test the function.     
 1. Download from the testthat directory () directly. 
 Or get the dataset using `git clone` commond in `Linux`:      
@@ -56,7 +56,7 @@ result = NetMoss2(case_dir = case_dir,
         net_control_dir = net_control_dir) 
 ```   
 
-# example for single file
+### example for single file
 If users only have single file for case and control groups, NetMoss2 can also be used to identify significant biomarkes.   
 ```
 data(testData)
