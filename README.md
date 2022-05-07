@@ -64,7 +64,7 @@ data(testData)
 ```
 
 ## Input     
-Abundance or network matrix should be included in the directory of the input.    
+Abundance or network matrix should be included in the input.    
 
 ##### Abundance Table
 `case_dir` or `control_dir` includes abundance matrix which refers to the relative abundance of case or contol samples, with the row as bacteria and the column as samples. Abundance file can be processed from raw sequence using [QIIME2](https://qiime2.org/), [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn) or other tools.       
@@ -85,19 +85,15 @@ Abundance or network matrix should be included in the directory of the input.
 |  taxon3  |   0.5  |  0.67  |    1   |      
 |  ... ... |        |        |        |     
 
-For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables) and network directories (empty). Network matrix will be output to the network directories automatically.      
+For convenience, we also provide a `netBuild` function to build microbial networks from abundance tables. To use this function, users are asked to provide abundance directories (contain case and control abundance tables). Network matrix will be output to the same directories automatically. For single file usage, users are asked to provided the abundance matrix only.          
 ```
 netBuild(case_dir = case_dir,
       control_dir = control_dir,
-      net_case_dir = net_case_dir,
-      net_control_dir = net_control_dir,
       method = "sparcc")
 ```
-`case_dir:`  the directory of case datasets.      
-`control_dir:`  the directory of control datasets.       
-`net_case_dir:`  the directory of case network datasets.        
-`net_control_dir:`  the directory of control network datasets.    
-`method:` the method to build networks. "sparcc" and "pearson" strategy are provided to choose.      
+`case_dir:`  the directory or a single file of case data.      
+`control_dir:`  the directory or a single file of control data.          
+`method:` the method to build networks. "sparcc" and "pearson" strategy are provided to choose.
 
 ## Output
 The output of the NetMoss is a table of NetMoss score for each taxon:     
