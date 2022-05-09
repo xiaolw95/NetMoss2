@@ -112,11 +112,13 @@ There are two types of visualization of NetMoss score: barplot and point plot.
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score.jpg" width = "600px">       
 
 Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
+
 Type1 highlights the top 5 taxon with the highest NetMoss score:
 
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network1.jpg" width = "600px">      
 
-TYpe2 highlights the target taxon which users want to focus:
+Type2 highlights the target taxon which users want to focus:
+
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network2.jpg" width = "600px">          
 
 ## Classification       
