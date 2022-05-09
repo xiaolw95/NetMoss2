@@ -99,7 +99,7 @@ netPlot(result = nodes_result,
         my.label = TRUE)
 ```
 `result:` the result from NetMoss function. This is a list contained NetMoss score and integrated networks.    
-`tax:` the target taxon which the users are interested. The taxon name must be included in the input file and will be highlighted in the paired network type2.        
+`tax:` the target taxon which the users are interested in. The taxon name must be included in the input file and will be highlighted in the paired network type2.       
 `num.top:` a numerical parameter. the number of top taxon to be highlighted in the paired networks type1.      
 `num.score:` a numerical parameter. the number of taxon to be plotted in the NetMoss score barplot and point plot.      
 `e.th:` the threshold of microbial correlations in the networks. Edges greater than this threshold are shown in the networks.     
@@ -113,11 +113,11 @@ There are two types of visualization of NetMoss score: barplot and point plot.
 
 Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
 
-Type1 highlights the top 5 taxon with the highest NetMoss score:
+Type1 highlights the top 5 taxon with the highest NetMoss score. The taxon number can be modified by hand with the parameter `num.top`:
 
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network1.jpg" width = "600px">      
 
-Type2 highlights the target taxon which users want to focus:
+Type2 highlights the target taxon users are interestd in, which needs to be set by hand with the parameter `tax`:
 
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network2.jpg" width = "600px">          
 
