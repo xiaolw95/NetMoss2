@@ -113,11 +113,11 @@ There are two types of visualization of NetMoss score: barplot and point plot.
 
 Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
 
-Type1 highlights the top 5 taxon with the highest NetMoss score. The taxon number can be modified by hand with the parameter `num.top`:
+Type1 highlights the top 5 taxon with the highest NetMoss score. The taxon number can be modified by hand using the parameter `num.top`:
 
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network1.jpg" width = "600px">      
 
-Type2 highlights the target taxon users are interestd in, which needs to be set by hand with the parameter `tax`:
+Type2 highlights the target taxon users are interestd in, which needs to be set by hand using the parameter `tax`:
 
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network2.jpg" width = "600px">          
 
