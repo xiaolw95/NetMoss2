@@ -98,7 +98,7 @@ netPlot(result = nodes_result,
 
 There are two types of visualization of NetMoss score: barplot and point plot.    
 
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score.jpg" width = "500px">       
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score.jpg" width = "800px">       
 
 Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
 
