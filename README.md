@@ -102,7 +102,8 @@ There are two types of visualization of NetMoss score: barplot and point plot.
 
 Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
 
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network1.jpg" width = "400px"> <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network2.jpg" width = "400px">      
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network1.jpg" width = "800px">      
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network2.jpg" width = "800px">          
 
 ## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
@@ -144,7 +145,7 @@ The result of the classfication is a table includes true positive rate and false
 
 A combined ROC will be ploted if the parameter `plot.roc` is set to be true.     
 
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_ROC.png" width = "800px">   
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_ROC.png" width = "500px">   
 
 
 ## Example
