@@ -103,8 +103,7 @@ There are two types of visualization of NetMoss score: barplot and point plot.
 
 Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
 
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/combined_network1.png" width = "500px">
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/combined_network2.png" width = "500px">       
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/combined_network.jpg">       
 
 ## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
