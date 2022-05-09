@@ -91,18 +91,32 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 In this part, we provide a function to illustrate the results. The `netPlot` function will output two kind of images. The one is the visualization of the important NetMoss score, the other is a paired networks to demostrated the difference of structure between case and control networks.         
 ```
 netPlot(result = nodes_result,
-        tax = "g__Bacteroides")
+        tax = "g__Bacteroides",
+        num.top = 5,
+        num.score = 30,
+        e.th = 0.4,
+        my.layout = layout_components,
+        my.label = TRUE)
 ```
 `result:` the result from NetMoss function. This is a list contained NetMoss score and integrated networks.    
-`tax:` the target taxon which the users are interested. The taxon name must be included in the input file.    
+`tax:` the target taxon which the users are interested. The taxon name must be included in the input file and will be highlighted in the paired network type2.     
+`num.top:` a numerical parameter. the number of top taxon to be highlighted in the paired networks type1.
+`num.score:` a numerical parameter. the number of taxon to be plotted in the NetMoss score barplot and point plot.
+`e.th:` the threshold of microbial correlations in the networks. Edges greater than this threshold are shown in the networks.
+`my.layout:` the layout of network. See package "igraph" for more information.
+`my.label` a logical parameter. If TRUE then the label of the nodes will be plotted.
+
 
 There are two types of visualization of NetMoss score: barplot and point plot.    
 
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score.jpg" width = "600px">       
 
 Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
+Type1 highlights the top 5 taxon with the highest NetMoss score:
 
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network1.jpg" width = "600px">      
+
+TYpe2 highlights the target taxon which users want to focus:
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network2.jpg" width = "600px">          
 
 ## Classification       
