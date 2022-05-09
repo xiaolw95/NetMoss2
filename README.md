@@ -88,7 +88,7 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 `p.adj:` the adjust P value for the NetMoss score.    
 
 #### Visualization
-In this part, we provide a function to illustrate the results. The `netPlot` function will output a paired networks to demostrated difference of structure between case and control networks.         
+In this part, we provide a function to illustrate the results. The `netPlot` function will output two kind of images. The one is the visualization of the important NetMoss score, the other is a paired networks to demostrated the difference of structure between case and control networks.         
 ```
 netPlot(result = nodes_result,
         tax = "g__Bacteroides")
@@ -96,9 +96,15 @@ netPlot(result = nodes_result,
 `result:` the result from NetMoss function. This is a list contained NetMoss score and integrated networks.    
 `tax:` the target taxon which the users are interested. The taxon name must be included in the input file.    
 
-The network image will be saved in the directory.    
+There are two types of visualization of NetMoss score: barplot and point plot.    
 
-<img src="https://github.com/xiaolw95/NetMoss/blob/main/NetMoss_ROC.png" width = "500px">     
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/NetMoss_score_bar.png" width = "500px">
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/NetMoss_score_point.png" width = "500px">       
+
+Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
+
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/combined_network1.png" width = "500px">
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/combined_network2.png" width = "500px">       
 
 ## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
@@ -140,7 +146,7 @@ The result of the classfication is a table includes true positive rate and false
 
 A combined ROC will be ploted if the parameter `plot.roc` is set to be true.     
 
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/NetMoss_ROC.pdf" width = "500px">   
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/NetMoss_ROC.png" width = "500px">   
 
 
 ## Example
