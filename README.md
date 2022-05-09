@@ -99,12 +99,12 @@ netPlot(result = nodes_result,
         my.label = TRUE)
 ```
 `result:` the result from NetMoss function. This is a list contained NetMoss score and integrated networks.    
-`tax:` the target taxon which the users are interested. The taxon name must be included in the input file and will be highlighted in the paired network type2.     
-`num.top:` a numerical parameter. the number of top taxon to be highlighted in the paired networks type1.
-`num.score:` a numerical parameter. the number of taxon to be plotted in the NetMoss score barplot and point plot.
-`e.th:` the threshold of microbial correlations in the networks. Edges greater than this threshold are shown in the networks.
-`my.layout:` the layout of network. See package "igraph" for more information.
-`my.label` a logical parameter. If TRUE then the label of the nodes will be plotted.
+`tax:` the target taxon which the users are interested. The taxon name must be included in the input file and will be highlighted in the paired network type2.        
+`num.top:` a numerical parameter. the number of top taxon to be highlighted in the paired networks type1.      
+`num.score:` a numerical parameter. the number of taxon to be plotted in the NetMoss score barplot and point plot.      
+`e.th:` the threshold of microbial correlations in the networks. Edges greater than this threshold are shown in the networks.     
+`my.layout:` the layout of network. See package "igraph" for more information.     
+`my.label` a logical parameter. If TRUE then the label of the nodes will be plotted.     
 
 
 There are two types of visualization of NetMoss score: barplot and point plot.    
