@@ -107,9 +107,15 @@ netPlot(result = nodes_result,
 `my.label` a logical parameter. If TRUE then the label of the nodes will be plotted.     
 
 
-There are two types of visualization of NetMoss score: barplot and point plot.    
+There are two types of visualization of NetMoss score.
 
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score.jpg" width = "600px">       
+barplot:    
+
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score_bar.jpg" width = "600px">       
+
+point plot:
+
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score_point.jpg" width = "600px">        
 
 Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
 
