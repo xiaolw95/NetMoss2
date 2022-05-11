@@ -113,9 +113,7 @@ Also, there is a image to demostrate the the difference of structure between cas
 The image highlights the top 5 taxon with the highest NetMoss score. The taxon number can be modified by hand using the parameter `num.top`:
 
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network.jpg" width = "600px">      
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network.png" width = "600px">     
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network.eps" width = "600px">     
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network.tif" width = "600px">      
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network.png" width = "600px">          
 
 ## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
