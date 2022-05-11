@@ -181,16 +181,6 @@ cd NetMoss2/testData
 ```
 #load packages
 library(NetMoss2)
-library(doBy)
-library(ggforce)
-library(ggpubr)
-library(igraph)
-library(psych)
-library(randomForest)
-library(Rmisc)
-library(rsparcc)
-library(yaml)
-library(coin)
 
 #setwd('path-to-testData-directory')   ####set the directory to testthat
 
@@ -233,16 +223,6 @@ If users only have single file for case and control groups, NetMoss2 can also be
 ```
 #load packages
 library(NetMoss2)
-library(doBy)
-library(ggforce)
-library(ggpubr)
-library(igraph)
-library(psych)
-library(randomForest)
-library(Rmisc)
-library(rsparcc)
-library(yaml)
-library(coin)
 
 #setwd("your-directory")
 
