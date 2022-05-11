@@ -106,13 +106,12 @@ netPlot(result = nodes_result,
 
 The image of NetMoss score demostrates the NetMoss score and average abundance of top 30 bacteria, which can be modified using the parameter `num.score`:        
 
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score.jpg" width = "600px">        
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score.png" width = "600px">        
 
 Also, there is a image to demostrate the the difference of structure between case and control networks.     
 
 The image highlights the top 5 taxon with the highest NetMoss score. The taxon number can be modified by hand using the parameter `num.top`:
-
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network.jpg" width = "600px">      
+    
 <img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network.png" width = "600px">          
 
 ## Classification       
