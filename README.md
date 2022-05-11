@@ -170,7 +170,7 @@ A combined ROC will be ploted if the parameter `plot.roc` is set to be true.
 ## Example
 ### example for multiple files
 We have provided a small dataset to test the R package. In our testthat directory, both abundance files and network files, as well as the metadata, are included.       
-1. Download from the testthat directory () directly. 
+1. Download from the testthat directory (https://github.com/xiaolw95/NetMoss2/tree/main/tests/testthat) directly.         
 Or get the dataset using `git clone` commond in `Linux`:      
 ```
 git clone https://github.com/xiaolw95/NetMoss2.git     
