@@ -1,7 +1,7 @@
 # NetMoss2
 NetMoss2 is the new version of NetMoss, which is a tool developed for integrating large-scale data and identifying disease associated biomarkers based on network algorithm.         
 
-In this new version, both single file and 
+In this new version, both single file and multiple files are supported as input. Also, we provide visualization to clearly demostrate correponding results.     
 
 For more information, please see paper "Large-scale microbiome data integration enables robust biomarker identification" published in Nature Computational Science.    
 
