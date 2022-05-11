@@ -17,7 +17,7 @@ For more information, please see paper "Large-scale microbiome data integration 
 ## Installation   
 
 #### Dependency
-Some R packages are needed before install and use `NetMoss`:      
+Some R packages are needed before install and use `NetMoss2`:      
     coin,      
     doBy,      
     ggforce,      
@@ -57,7 +57,7 @@ for (i in install_package) {
 }
  ```
 
-Installation with `devtools`     
+Installation `NetMoss2` with `devtools`     
 ```
 library(devtools)
 install_github("xiaolw95/NetMoss2")
