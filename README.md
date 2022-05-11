@@ -169,18 +169,18 @@ A combined ROC will be ploted if the parameter `plot.roc` is set to be true.
 
 ## Example
 ### example for multiple files
-We have provided a small dataset to test the R package. In our testthat directory, both abundance files and network files, as well as the metadata, are included.       
-1. Download from the testthat directory (https://github.com/xiaolw95/NetMoss2/tree/main/tests/testthat) directly.         
+We have provided a small dataset to test the R package. In our testData directory, both abundance files and network files, as well as the metadata, are included.       
+1. Download from the testData directory (https://github.com/xiaolw95/NetMoss2/tree/main/testData) directly.         
 Or get the dataset using `git clone` commond in `Linux`:      
 ```
 git clone https://github.com/xiaolw95/NetMoss2.git     
-cd NetMoss2/tests/testthat
+cd NetMoss2/testData
 ```
 
 2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss` function:       
 ```
 #library(NetMoss2)
-#setwd('path-to-testthat-directory')   ####set the directory to testthat
+#setwd('path-to-testData-directory')   ####set the directory to testthat
 
 #read directory
 case_dir = paste0(getwd(),"/case_dir")
