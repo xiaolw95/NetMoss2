@@ -179,7 +179,19 @@ cd NetMoss2/testData
 
 2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss` function:       
 ```
-#library(NetMoss2)
+#load packages
+library(NetMoss2)
+library(doBy)
+library(ggforce)
+library(ggpubr)
+library(igraph)
+library(psych)
+library(randomForest)
+library(Rmisc)
+library(rsparcc)
+library(yaml)
+library(coin)
+
 #setwd('path-to-testData-directory')   ####set the directory to testthat
 
 #read directory
@@ -219,7 +231,19 @@ myROC = netROC(case_dir = case_dir,
 ### example for single file
 If users only have single file for case and control groups, NetMoss2 can also be used to identify significant biomarkes.   
 ```
-#library(NetMoss2)
+#load packages
+library(NetMoss2)
+library(doBy)
+library(ggforce)
+library(ggpubr)
+library(igraph)
+library(psych)
+library(randomForest)
+library(Rmisc)
+library(rsparcc)
+library(yaml)
+library(coin)
+
 #setwd("your-directory")
 
 #load dataset
