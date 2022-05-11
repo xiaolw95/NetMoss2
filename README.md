@@ -14,7 +14,49 @@ For more information, please see paper "Large-scale microbiome data integration 
 - [Classification](#classification)    
 - [Example](#example)       
 
-## Installation    
+## Installation   
+
+####Dependency
+Some R packages are needed before install and use `NetMoss`:      
+    coin,      
+    doBy,      
+    ggforce,      
+    ggpubr,      
+    igraph,      
+    psych,      
+    randomForest,      
+    Rmisc,      
+    rsparcc,      
+    yaml,       
+    WeightedROC,      
+    WGCNA,      
+    pROC,      
+    plotROC,      
+    ggplot2,      
+    reshape2
+    
+First, install all R packages:       
+ ```
+ local({r <- getOption("repos")  
+r["CRAN"] <- "http://mirrors.tuna.tsinghua.edu.cn/CRAN/"   
+r["BioC_mirror"] <- "https://mirrors.tuna.tsinghua.edu.cn/bioconductor"
+options(repos=r)}) 
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+a = rownames(installed.packages())
+
+install_package <- c("psych", "reshape2", "igraph", "coin", "ggplot2",
+"doBy","ggforce","ggpubr","randomForest","Rmisc",
+"rsparcc","yaml","WeightedROC","WGCNA","pROC","plotROC")
+
+for (i in install_package) {
+  if (!i %in% a)
+    BiocManager::install(i, update = F)
+}
+ ```
+
 Installation with `devtools`     
 ```
 library(devtools)
