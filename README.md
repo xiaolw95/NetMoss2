@@ -88,44 +88,31 @@ The output of the NetMoss is a table of NetMoss score for each taxon:
 `p.adj:` the adjust P value for the NetMoss score.    
 
 #### Visualization
-In this part, we provide a function to illustrate the results. The `netPlot` function will output two kind of images. The one is the visualization of the important NetMoss score, the other is a paired networks to demostrated the difference of structure between case and control networks.         
+In this part, we provide a function to illustrate the results. The `netPlot` function will output two kind of images. The one is the visualization of the important NetMoss score, the other is the paired networks to demostrated the difference of structure between case and control networks.         
 ```
 netPlot(result = nodes_result,
-        tax = "g__Bacteroides",
         num.top = 5,
         num.score = 30,
         e.th = 0.4,
         my.layout = layout_components,
         my.label = TRUE)
 ```
-`result:` the result from NetMoss function. This is a list contained NetMoss score and integrated networks.    
-`tax:` the target taxon which the users are interested in. The taxon name must be included in the input file and will be highlighted in the paired network type2.       
-`num.top:` a numerical parameter. the number of top taxon to be highlighted in the paired networks type1.      
+`result:` the result from NetMoss function. This is a list contained NetMoss score and integrated networks.         
+`num.top:` a numerical parameter. the number of top taxon to be highlighted in the paired networks.      
 `num.score:` a numerical parameter. the number of taxon to be plotted in the NetMoss score barplot and point plot.      
 `e.th:` the threshold of microbial correlations in the networks. Edges greater than this threshold are shown in the networks.     
 `my.layout:` the layout of network. See package "igraph" for more information.     
 `my.label` a logical parameter. If TRUE then the label of the nodes will be plotted.     
 
+The image of NetMoss score demostrates the NetMoss score and average abundance of top 30 bacteria, which can be modified using the parameter `num.score`.        
 
-There are two types of visualization of NetMoss score.
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score.jpg" width = "600px">        
 
-barplot:    
+Also, there is a image to demostrate the the difference of structure between case and control networks.     
 
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score_bar.jpg" width = "600px">       
+The image highlights the top 5 taxon with the highest NetMoss score. The taxon number can be modified by hand using the parameter `num.top`:
 
-point plot:
-
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/NetMoss_score_point.jpg" width = "600px">        
-
-Also, there are two types of visualization to demostrated the the difference of structure between case and control networks.     
-
-Type1 highlights the top 5 taxon with the highest NetMoss score. The taxon number can be modified by hand using the parameter `num.top`:
-
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network1.jpg" width = "600px">      
-
-Type2 highlights the target taxon users are interestd in, which needs to be set by hand using the parameter `tax`:
-
-<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network2.jpg" width = "600px">          
+<img src="https://github.com/xiaolw95/NetMoss2/blob/main/pic/network.jpg" width = "600px">      
 
 ## Classification       
 In this section, we provide a pipeline to classify case and control groups based on the NetMoss markers. Iterative training and 10-fold cross validation stpes are implemented to guarantee the markers contain network and abundance informations. For this reason, it will take a long time to process the real datasets which contain large samples. Please be patient.
