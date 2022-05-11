@@ -16,7 +16,7 @@ For more information, please see paper "Large-scale microbiome data integration 
 
 ## Installation   
 
-####Dependency
+#### Dependency
 Some R packages are needed before install and use `NetMoss`:      
     coin,      
     doBy,      
