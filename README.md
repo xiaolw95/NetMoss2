@@ -35,7 +35,7 @@ Some R packages are needed before install and use `NetMoss2`:
     [ggplot2](https://ggplot2.tidyverse.org/)      
     [reshape2](https://cran.r-project.org/web/packages/reshape2/index.html)
     
-First, install all R packages:       
+First, install all R packages. You can install them manually or use the following code. Some of these packages may be complicated to install.         
  ```
  local({r <- getOption("repos")  
 r["CRAN"] <- "http://mirrors.tuna.tsinghua.edu.cn/CRAN/"   
@@ -57,7 +57,7 @@ for (i in install_package) {
 }
  ```
 
-Installation `NetMoss2` with `devtools`     
+Next, install `NetMoss2` with `devtools`     
 ```
 library(devtools)
 install_github("xiaolw95/NetMoss2")
