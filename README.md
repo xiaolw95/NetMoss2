@@ -22,7 +22,7 @@ Some R packages are needed before install and use `NetMoss2`:
     [doBy](https://cran.r-project.org/web/packages/doBy/index.html)      
     [ggforce](https://cran.r-project.org/web/packages/ggforce/index.html)      
     [ggpubr](https://cran.r-project.org/web/packages/ggpubr/index.html)      
-    [igraph](https://cran.r-project.org/web/packages/igraph/index.html)      
+    [igraph](https://igraph.org/r/)      
     [psych](https://cran.r-project.org/web/packages/psych/index.html)      
     [randomForest](https://cran.r-project.org/web/packages/randomForest/index.html)      
     [Rmisc](https://cran.r-project.org/web/packages/Rmisc/index.html)      
