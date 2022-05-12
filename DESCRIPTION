@@ -14,7 +14,6 @@ RoxygenNote: 7.1.2
 Imports: 
     coin,
     psych,
-    rsparcc,
     yaml
 Depends: 
     WeightedROC,
@@ -28,7 +27,8 @@ Depends:
     igraph,
     ggpubr,
     randomForest,
-    doBy
+    doBy,
+    rsparcc
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
