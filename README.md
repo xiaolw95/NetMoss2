@@ -18,22 +18,22 @@ For more information, please see paper "Large-scale microbiome data integration 
 
 #### Dependency
 Some R packages are needed before install and use `NetMoss2`:      
-    coin,      
-    doBy,      
-    ggforce,      
-    ggpubr,      
-    igraph,      
-    psych,      
-    randomForest,      
-    Rmisc,      
-    rsparcc,      
-    yaml,       
-    WeightedROC,      
-    WGCNA,      
-    pROC,      
-    plotROC,      
-    ggplot2,      
-    reshape2
+    [coin](https://cran.r-project.org/web/packages/coin/index.html)      
+    [doBy](https://cran.r-project.org/web/packages/doBy/index.html)      
+    [ggforce](https://cran.r-project.org/web/packages/ggforce/index.html)      
+    [ggpubr](https://cran.r-project.org/web/packages/ggpubr/index.html)      
+    [igraph](https://cran.r-project.org/web/packages/igraph/index.html)      
+    [psych](https://cran.r-project.org/web/packages/psych/index.html)      
+    [randomForest](https://cran.r-project.org/web/packages/randomForest/index.html)      
+    [Rmisc](https://cran.r-project.org/web/packages/Rmisc/index.html)      
+    [rsparcc](https://github.com/MPBA/r-sparcc)      
+    [yaml](https://cran.r-project.org/web/packages/yaml/index.html)       
+    [WeightedROC](https://github.com/tdhock/WeightedROC)      
+    [WGCNA](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/)      
+    [pROC](https://cran.r-project.org/web/packages/pROC/index.html)      
+    [plotROC](https://cran.r-project.org/web/packages/plotROC/index.html)      
+    [ggplot2](https://ggplot2.tidyverse.org/)      
+    [reshape2](https://cran.r-project.org/web/packages/reshape2/index.html)
     
 First, install all R packages:       
  ```
