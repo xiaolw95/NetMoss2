@@ -16,48 +16,7 @@ For more information, please see paper "Large-scale microbiome data integration 
 
 ## Installation   
 
-#### Dependency
-Some R packages are needed before install and use `NetMoss2`:      
-    [coin](https://cran.r-project.org/web/packages/coin/index.html)      
-    [doBy](https://cran.r-project.org/web/packages/doBy/index.html)      
-    [ggforce](https://cran.r-project.org/web/packages/ggforce/index.html)      
-    [ggpubr](https://cran.r-project.org/web/packages/ggpubr/index.html)      
-    [igraph](https://igraph.org/r/)      
-    [psych](https://cran.r-project.org/web/packages/psych/index.html)      
-    [randomForest](https://cran.r-project.org/web/packages/randomForest/index.html)      
-    [Rmisc](https://cran.r-project.org/web/packages/Rmisc/index.html)      
-    [rsparcc](https://github.com/MPBA/r-sparcc)      
-    [yaml](https://cran.r-project.org/web/packages/yaml/index.html)       
-    [WeightedROC](https://github.com/tdhock/WeightedROC)      
-    [WGCNA](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/)      
-    [pROC](https://cran.r-project.org/web/packages/pROC/index.html)      
-    [plotROC](https://cran.r-project.org/web/packages/plotROC/index.html)      
-    [ggplot2](https://ggplot2.tidyverse.org/)      
-    [reshape2](https://cran.r-project.org/web/packages/reshape2/index.html)
-    
-First, install all R packages. You can install them manually or use the following code.          
- ```
- local({r <- getOption("repos")  
-r["CRAN"] <- "http://mirrors.tuna.tsinghua.edu.cn/CRAN/"   
-r["BioC_mirror"] <- "https://mirrors.tuna.tsinghua.edu.cn/bioconductor"
-options(repos=r)}) 
-
-if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-
-a = rownames(installed.packages())
-
-install_package <- c("psych", "reshape2", "igraph", "coin", "ggplot2",
-"doBy","ggforce","ggpubr","randomForest","Rmisc",
-"rsparcc","yaml","WeightedROC","WGCNA","pROC","plotROC")
-
-for (i in install_package) {
-  if (!i %in% a)
-    BiocManager::install(i, update = F)
-}
- ```
-
-Next, install `NetMoss2` with `devtools`     
+Install `NetMoss2` with `devtools`     
 ```
 library(devtools)
 install_github("xiaolw95/NetMoss2")
@@ -221,7 +180,7 @@ cd NetMoss2/testData
 
 2. After getting the dataset, the NetMoss score can be easily calculated using the `NetMoss` function:       
 ```
-#load packages
+#load package
 library(NetMoss2)
 
 #setwd('path-to-testData-directory')   ####set the directory to testthat
@@ -263,7 +222,7 @@ myROC = netROC(case_dir = case_dir,
 ### example for single file
 If users only have single file for case and control groups, NetMoss2 can also be used to identify significant biomarkes.   
 ```
-#load packages
+#load package
 library(NetMoss2)
 
 #setwd("your-directory")
