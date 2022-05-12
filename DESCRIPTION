@@ -13,13 +13,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     coin,
-    doBy,
-    ggforce,
-    ggpubr,
-    igraph,
     psych,
-    randomForest,
-    Rmisc,
     rsparcc,
     yaml
 Depends: 
@@ -28,7 +22,13 @@ Depends:
     pROC,
     plotROC,
     ggplot2,
-    reshape2
+    reshape2,
+    Rmisc,
+    ggforce,
+    igraph,
+    ggpubr,
+    randomForest,
+    doBy
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
