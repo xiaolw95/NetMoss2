@@ -118,7 +118,7 @@ getNetwork <-
         colnames(control_dir.new)[1] = "X"
       }else
       {
-        control_dir.new = case_dir.new
+        control_dir.new = control_dir.new
       }
 
       integratedNet = list(case_union_data_list, control_union_data_list, case_dir.new, control_dir.new)
@@ -240,7 +240,7 @@ getNetwork <-
         colnames(control_dir.new)[1] = "X"
       }else
       {
-        control_dir.new = case_dir.new
+        control_dir.new = control_dir.new
       }
 
       integratedNet = list(case_union_data_list, control_union_data_list, case_dir.new, control_dir.new)
