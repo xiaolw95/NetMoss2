@@ -211,6 +211,11 @@ result = nodes_result[[1]]     ####NetMoss score result
 #plot networks
 netPlot(nodes_result)    ####image saved
 
+#plot roc 
+#trim markers
+marker = data.frame(result[which(result$p.adj < 0.05),])
+marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
+rownames(marker) = marker$taxon_names
 
 #construct metadata    ######if file exists, skip
 #metadata
@@ -224,12 +229,8 @@ netPlot(nodes_result)    ####image saved
 #metadata$type = as.factor(metadata$type)
 #rownames(metadata) = metadata$sample_id
 
-
-#plot roc 
-marker = data.frame(result[which(result$p.adj < 0.05),])
-marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
-rownames(marker) = marker$taxon_names
 metadata = read.table("metadata.txt",header = T,sep = '\t',row.names = 1)
+
 myROC = netROC(case_dir = case_dir,
                control_dir = control_dir,
                marker = marker,
@@ -264,6 +265,11 @@ result = nodes_result[[1]]   ####NetMoss score result
 #plot networks
 netPlot(nodes_result)    ####image saved
 
+#plot roc 
+#trim markers
+marker = data.frame(result[which(result$p.adj < 0.05),])
+marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
+rownames(marker) = marker$taxon_names
 
 #construct metadata    ######if file exists, skip
 #metadata
@@ -276,12 +282,8 @@ netPlot(nodes_result)    ####image saved
 #metadata$sample_id = as.character(metadata$sample_id)
 #metadata$type = as.factor(metadata$type)
 
-
-#plot roc 
-marker = data.frame(result[which(result$p.adj < 0.05),])
-marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
-rownames(marker) = marker$taxon_names
 metadata = mydata[[5]]
+
 myROC = netROC(case_dir =  mydata[[1]],
                control_dir =  mydata[[2]],
                marker = marker,
