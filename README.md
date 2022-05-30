@@ -41,7 +41,8 @@ nodes_result  = NetMoss(case_dir = case_dir,
 Abundance or network matrix should be included in the input.    
 
 ##### Abundance Table
-`case_dir` or `control_dir` includes abundance matrix which refers to the relative abundance of case or contol samples, with the row as bacteria and the column as samples. Abundance file can be processed from raw sequence using [QIIME2](https://qiime2.org/), [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn) or other tools.       
+`case_dir` or `control_dir` includes abundance matrix which refers to the relative abundance of case or contol samples, with the row as bacteria and the column as samples. Abundance file can be processed from raw sequence using [QIIME2](https://qiime2.org/), [MetaPhlAn3](https://github.com/biobakery/MetaPhlAn) or other tools.     
+`NOTE:` be sure that set "header = T" when you read the data.     
 | taxon_names   | sample1 | sample2 | sample3 |    
 |  ---  |  ---  |  ---  |  ---  |       
 |   taxon1    |    60   |    20   |   10    |       
