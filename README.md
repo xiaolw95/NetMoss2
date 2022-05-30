@@ -26,7 +26,7 @@ library(NetMoss2)
 ## Basic Usage     
 The NetMoss function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories or files as follows:      
 ```
-NetMoss(case_dir = case_dir,    
+nodes_result  = NetMoss(case_dir = case_dir,    
         control_dir = control_dir,    
         net_case_dir = net_case_dir,   
         net_control_dir = net_control_dir)   
@@ -75,7 +75,12 @@ netBuild(case_dir = case_dir,
 
 
 ## Output
-The output of the NetMoss contains a table of NetMoss score for each taxon:     
+The output of the NetMoss function is a list contains NetMoss score and integrated results, which could be used in the downstream analysis.           
+The first list: `nodes_result[[1]]` is the NetMoss score and p value of each taxon;     
+The second and the third list: `nodes_result[[2]]` and `nodes_result[[3]]` are integrated networks constructed from case and control data;     
+The 4th and thd 5th list: `nodes_result[[4]]` and `nodes_result[[5]]` are case and control data from the input.      
+
+The first list contains a table of NetMoss score for each taxon:     
 | taxon_names | NetMoss_score |      p.val    |      p.adj    |    
 |  ---------  | ------------  |  ------------ |  -----------  |       
 |    taxon1   |      0.98     |  5.703785e-09 |  2.335836e-08 |       
