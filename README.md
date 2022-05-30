@@ -211,6 +211,20 @@ result = nodes_result[[1]]     ####NetMoss score result
 #plot networks
 netPlot(nodes_result)    ####image saved
 
+
+#construct metadata    ######if file exists, skip
+#metadata
+#case = nodes_result[[4]]
+#control = nodes_result[[5]]
+#metadata = data.frame(sample_id = c(colnames(case[,-1]),
+#                                    colnames(control[,-1])),
+#                      type = c(rep("disease",length(colnames(case[,-1]))),
+#                               rep("healthy",length(colnames(control[,-1])))))
+#metadata$sample_id = as.character(metadata$sample_id)
+#metadata$type = as.factor(metadata$type)
+#rownames(metadata) = metadata$sample_id
+
+
 #plot roc 
 marker = data.frame(result[which(result$p.adj < 0.05),])
 marker = data.frame(marker[which(marker$NetMoss_Score > 0.3),])   ####marker selection
@@ -249,6 +263,19 @@ result = nodes_result[[1]]   ####NetMoss score result
 
 #plot networks
 netPlot(nodes_result)    ####image saved
+
+
+#construct metadata    ######if file exists, skip
+#metadata
+#case = nodes_result[[4]]
+#control = nodes_result[[5]]
+#metadata = data.frame(sample_id = c(colnames(case[,-1]),
+#                                    colnames(control[,-1])),
+#                      type = c(rep("disease",length(colnames(case[,-1]))),
+#                               rep("healthy",length(colnames(control[,-1])))))
+#metadata$sample_id = as.character(metadata$sample_id)
+#metadata$type = as.factor(metadata$type)
+
 
 #plot roc 
 marker = data.frame(result[which(result$p.adj < 0.05),])
