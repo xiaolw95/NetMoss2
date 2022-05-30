@@ -23,6 +23,12 @@ install_github("xiaolw95/NetMoss2")
 library(NetMoss2)
 ```
 
+For some R packages like [rsparcc](https://github.com/MPBA/r-sparcc), installation from CRAN may be complicated. We recommend install them from github directly.    
+For example:      
+```
+install_github("MPBA/r-sparcc")
+```
+
 ## Basic Usage     
 The NetMoss function is used to calculate NetMoss score of significant bacteria between case and control groups. Users are demanded to provide four directories or files as follows:      
 ```
