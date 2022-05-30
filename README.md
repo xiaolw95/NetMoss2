@@ -3,7 +3,7 @@ NetMoss2 is the new version of NetMoss, which is a tool developed for integratin
 
 In this new version, both single file and multiple files are supported as input. Also, we provide visualization to clearly illustrate correponding results.     
 
-For more information, please see paper "Large-scale microbiome data integration enables robust biomarker identification" published in Nature Computational Science.    
+For more information, please see paper "Large-scale microbiome data integration enables robust biomarker identification" published in [Nature Computational Science](https://www.nature.com/articles/s43588-022-00247-8).       
 
 
 ## Contents  
