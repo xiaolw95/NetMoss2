@@ -84,6 +84,9 @@ getNetwork <-
         a = data.frame(a)
         colnames(a) = colnames(control_dir)
         control_dir.new = rbind(control_dir,a)
+      }else
+      {
+        control_dir.new = control_dir
       }
 
       control.tax = setdiff(control_dir$X,case_dir$X)
@@ -95,6 +98,27 @@ getNetwork <-
         a = data.frame(a)
         colnames(a) = colnames(case_dir)
         case_dir.new = rbind(case_dir,a)
+      }else
+      {
+        case_dir.new = case_dir
+      }
+
+      if (colnames(case_dir.new)[1] != "X")
+      {
+        case_dir.new = cbind(rownames(case_dir.new),case_dir.new)
+        colnames(case_dir.new)[1] = "X"
+      }else
+      {
+        case_dir.new = case_dir.new
+      }
+
+      if (colnames(control_dir.new)[1] != "X")
+      {
+        control_dir.new = cbind(rownames(control_dir.new),control_dir.new)
+        colnames(control_dir.new)[1] = "X"
+      }else
+      {
+        control_dir.new = case_dir.new
       }
 
       integratedNet = list(case_union_data_list, control_union_data_list, case_dir.new, control_dir.new)
@@ -182,6 +206,9 @@ getNetwork <-
         a = data.frame(a)
         colnames(a) = colnames(control_dir.sample)
         control_dir.new = rbind(control_dir.sample,a)
+      }else
+      {
+        control_dir.new = control_dir.sample
       }
 
       control.tax = setdiff(control_dir.sample$X,case_dir.sample$X)
@@ -193,6 +220,27 @@ getNetwork <-
         a = data.frame(a)
         colnames(a) = colnames(case_dir.sample)
         case_dir.new = rbind(case_dir.sample,a)
+      }else
+      {
+        case_dir.new = case_dir.sample
+      }
+
+      if (colnames(case_dir.new)[1] != "X")
+      {
+        case_dir.new = cbind(rownames(case_dir.new),case_dir.new)
+        colnames(case_dir.new)[1] = "X"
+      }else
+      {
+        case_dir.new = case_dir.new
+      }
+
+      if (colnames(control_dir.new)[1] != "X")
+      {
+        control_dir.new = cbind(rownames(control_dir.new),control_dir.new)
+        colnames(control_dir.new)[1] = "X"
+      }else
+      {
+        control_dir.new = case_dir.new
       }
 
       integratedNet = list(case_union_data_list, control_union_data_list, case_dir.new, control_dir.new)
@@ -322,6 +370,9 @@ getNetwork <-
         a = data.frame(a)
         colnames(a) = colnames(control.com.sample)
         control.com.sample.new = rbind(control.com.sample,a)
+      }else
+      {
+        control.com.sample.new = control.com.sample
       }
 
       control.tax = setdiff(control.com.sample$X,case.com.sample$X)
@@ -333,6 +384,9 @@ getNetwork <-
         a = data.frame(a)
         colnames(a) = colnames(case.com.sample)
         case.com.sample.new = rbind(case.com.sample,a)
+      }else
+      {
+        case.com.sample.new = case.com.sample
       }
 
 
@@ -406,6 +460,24 @@ getNetwork <-
         }
       }
       control_union <- pool_union
+
+      if (colnames(case.com.sample.new)[1] != "X")
+      {
+        case.com.sample.new = cbind(rownames(case.com.sample.new),case.com.sample.new)
+        colnames(case.com.sample.new)[1] = "X"
+      }else
+      {
+        case.com.sample.new = case.com.sample.new
+      }
+
+      if (colnames(control.com.sample.new)[1] != "X")
+      {
+        control.com.sample.new = cbind(rownames(control.com.sample.new),control.com.sample.new)
+        colnames(control.com.sample.new)[1] = "X"
+      }else
+      {
+        control.com.sample.new = control.com.sample.new
+      }
 
       integratedNet = list(case_union, control_union, case.com.sample.new, control.com.sample.new)
 

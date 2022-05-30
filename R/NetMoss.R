@@ -10,7 +10,10 @@
 #' @param minModuleSize numerical. Minimum module size. Set to 20 by default.
 #' @param soft_pow numerical. Soft power for module division. Set to 5 by default.
 #'
-#' @return NetMoss score and module division results of each bacterium.
+#' @return The output of the NetMoss function is a list contains NetMoss score and integrated results, which could be used in the downstream analysis.
+#' The first list: nodes_result[[1]] is the NetMoss score and p value of each taxon;
+#' The second and the third list: nodes_result[[2]] and nodes_result[[3]] are integrated networks constructed from case and control data;
+#' The 4th and thd 5th list: nodes_result[[4]] and nodes_result[[5]] are case and control data from the input.
 #' @export
 #'
 #' @examples

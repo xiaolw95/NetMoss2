@@ -171,7 +171,6 @@ NetzGO <-
     nodes$p.val = p.table[as.character(nodes$taxon_names), "pvalue"]
     nodes$p.adj = p.table[as.character(nodes$taxon_names), "p.adj"]
 
-    nodes = nodes[which(nodes$p.adj < 0.05),]
     nodes = nodes[which(nodes$NetMoss_Score > 0),]
 
     if (nrow(nodes) == 0)

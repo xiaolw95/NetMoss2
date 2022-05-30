@@ -48,9 +48,9 @@ netROC <-
     {
       ####read
       x.case.net = case_dir
-      rownames(x.case.net) = x.case.net[, 1]
+      #rownames(x.case.net) = x.case.net[, 1]
       x.control.net = control_dir
-      rownames(x.control.net) = x.control.net[, 1]
+      #rownames(x.control.net) = x.control.net[, 1]
       rownames(metadata) = metadata$sample_id
       metadata$type = as.factor(metadata$type)
 
