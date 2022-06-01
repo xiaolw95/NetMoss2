@@ -16,7 +16,7 @@ For more information, please see paper "Large-scale microbiome data integration 
 
 ## Installation   
 
-Install `NetMoss2` with `devtools`     
+Install `NetMoss2` with `devtools`    
 ```
 library(devtools)
 install_github("xiaolw95/NetMoss2")
@@ -24,7 +24,8 @@ library(NetMoss2)
 ```
 
 For some R packages like [rsparcc](https://github.com/MPBA/r-sparcc), installation from CRAN may be complicated. We recommend install them from github directly.    
-For example:      
+
+For example:   
 ```
 install_github("MPBA/r-sparcc")
 ```
