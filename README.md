@@ -16,10 +16,10 @@ For more information, please see paper "Large-scale microbiome data integration 
 
 ## Installation   
 
-Install `NetMoss2` with `devtools`    
+Install `NetMoss2` with `remotes`    
 ```
-library(devtools)
-install_github("xiaolw95/NetMoss2")
+install.packages("remotes")
+remotes::install_github("xiaolw95/NetMoss2")
 library(NetMoss2)
 ```
 
