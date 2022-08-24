@@ -215,6 +215,7 @@ net_case_dir = paste0(getwd(),"/net_case_dir")
 net_control_dir = paste0(getwd(),"/net_control_dir")
 
 #construct networks  ####if files exist, skip
+#library(rsparcc)
 #netBuild(case_dir = case_dir,
 #         control_dir = control_dir,
 #         method = "sparcc")
@@ -269,6 +270,7 @@ library(NetMoss2)
 data(testData)
 
 #contruct networks    ####if files exist, skip
+#library(rsparcc)
 #netBuild(case_dir = mydata[[1]],
 #         control_dir = mydata[[2]],
 #         method = "sparcc")     
