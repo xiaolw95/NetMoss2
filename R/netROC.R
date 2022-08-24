@@ -261,6 +261,8 @@ netROC <-
         sep = "\t",
         row.names = 1
       )
+      rownames(metadata) = metadata$sample_id
+      metadata$type = as.factor(metadata$type)
 
       ##loop
       roc.all = list()
