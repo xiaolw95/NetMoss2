@@ -299,6 +299,7 @@ rownames(marker) = marker$taxon_names
 #                               rep("healthy",length(colnames(control[,-1])))))
 #metadata$sample_id = as.character(metadata$sample_id)
 #metadata$type = as.factor(metadata$type)
+#rownames(metadata) = metadata$sample_id
 
 metadata = mydata[[5]]
 
