@@ -73,7 +73,16 @@ For convenience, we also provide a `netBuild` function to build microbial networ
 
 `NOTE:` The `netBuild` function will creat "net_case_dir" and "net_control_dir" directories and output the network results into them. If the same directories exist, files will be overwritten.     
 
+First, make sure that you have the package [rsparcc](https://github.com/MPBA/r-sparcc) installed.     
+
 ```
+install_github("MPBA/r-sparcc")
+```
+
+Next, you can load `rsparcc` and build the network.
+
+```
+library(rsparcc)
 netBuild(case_dir = case_dir,
          control_dir = control_dir,
          method = "sparcc")
