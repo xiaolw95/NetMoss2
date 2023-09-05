@@ -42,6 +42,10 @@ nodes_result  = NetMoss(case_dir = case_dir,
 `control_dir:`  the directory or a single file of control data.      
 `net_case_dir:`  the directory or a single file of case network.      
 `net_control_dir:`  the directory or a single data of control network.      
+Other arguments related to model division can be referred to original WGCNA publications and papers:
+[WGCNA: an R package for weighted correlation network analysis](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-9-559#Abs1)      
+[Defining clusters from a hierarchical cluster tree: the Dynamic Tree Cut package for R](https://academic.oup.com/bioinformatics/article/24/5/719/200751?login=true)      
+[Eigengene networks for studying the relationships between co-expression modules](https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-1-54)
 
 
 ## Input     
